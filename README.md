@@ -109,9 +109,11 @@ resultado = int(resp_1 + resp_2 + resp_3 + resp_4 + resp_5)
 
 >Dependiendo de la suma de tu resultado final sabras tu resultado
 
+'''
 print ("Si tu resultado se encuentra entre 1 y 5 eres INTROVERTIDO")
 print ("Si tu resultado se encuentra entre 6 y 10 eres AMBIVERTIDO")
 print ("Si tu resultado se encuentra entre 11 y 15 eres EXTROVERTIDO")
+'''
 
 >Se despliega el resultado obtenido
 
