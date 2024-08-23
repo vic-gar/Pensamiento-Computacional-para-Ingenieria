@@ -1,148 +1,101 @@
-# TC1028.415 Pensamiento Computacional para Ingeniería Proyecto 
+## TC1028.415 Pensamiento Computacional para Ingeniería Proyecto 
 
-# Examen de Personalidad: ¿Extrovertido, Introvertido o un poco de ambos?
+## Examen de Personalidad: ¿Extrovertido, Introvertido o un poco de ambos?
 
-CONTEXTO
+# CONTEXTO
 
 Los términos de extrovertido, introvertido o ambivertido se utilizan para clasificar la personalidad de las personas en un ambito social. El comportamiento que tomas en una situación donde interfieren más personas, a veces conocidas, otras desconocidas, se puede definir en estos tres conceptos y puede que tú mismo ya tengas presente que tipo de persona eres, pero ¿no te gustaría averiguarlo? 
 
-Estos términos fueron creados por el psiquiatra Carl Gustav Jung (1920), quien indicaba que una persona extrovertida busca "un contacto intenso con el mundo exterior" mientras que alguien introvertido "mira hacia el interior". En términos del autor nadie es completamente introvertido o extrovertido, pero si tendemos a inclinarnos a uno de estos casos. Fuente https://bvgpsicologia.com/que-es-ser-introvertido-o-extrovertido/
+Estos términos fueron creados por el psiquiatra Carl Gustav Jung (1920), quien indicaba que una persona extrovertida busca "un contacto intenso con el mundo exterior" mientras que alguien introvertido "mira hacia el interior". En términos del autor nadie es completamente introvertido o extrovertido, pero si tendemos a inclinarnos a uno de estos casos. Fuente (https://bvgpsicologia.com/que-es-ser-introvertido-o-extrovertido/)
 
-En este examen diseñado por la psicóloga Vanesa Fernandez Lopez (2022) recabado de la página Webconsultas: https://www.webconsultas.com/mente-y-emociones/test-de-psicologia/test-eres-extrovertido-o-introvertido-12699 ; se te presentarán una serie de preguntas que te ayudarán a poder descifrar si te inclinas más a tener una personalidad introvertida o extrovertida, o si se te puede considerar en un punto medio. Al final del test se te presentarán tus resultados en base a tus respuestas. 
-
-
-ALGORITMO
-
-Inicio del examen 
-
-Resuestas = ("Pregunta 1", "Pregunta 2", "Pregunta 3", "Pregunta 4", "Pregunta 5", "Pregunta 6", "Pregunta 7", "Pregunta 8", "Presunta 9", "Pregunta 10")
-
-0 = ambivertido
-1 = introvertido
-2 = extrovertido
-
-Pregunta 1 = "1. Cuando estoy en una reunion de trabajo"
-Desplega =
-  a) Prefiero pasar desapercibido 
-  b) Me gusta participar
-  c) Intervengo solo cuando es necesario
-
-Si elige "a" guarda valor 1 en "Respuestas"
-Si elige "b" guarda valor 2 en "Respuestas"
-Si elige "c" guarda valor 0 en "Respuestas"
+En este examen diseñado por la psicóloga Vanesa Fernandez Lopez (2022) recabado de la página Webconsultas: (https://www.webconsultas.com/mente-y-emociones/test-de-psicologia/test-eres-extrovertido-o-introvertido-12699) ; se te presentarán una serie de preguntas que te ayudarán a poder descifrar si te inclinas más a tener una personalidad introvertida o extrovertida, o si se te puede considerar en un punto medio. Al final del test se te presentarán tus resultados en base a tus respuestas. 
 
 
-Pregunta 2 = "2. A la hora de entablar nuevas amistades"
-Desplega =
-  a) Me gusta y lo hago fácilmente 
-  b) No me gusta, y me cuesta muchísimo
-  c) Dependiendo de cómo sean las personas, se me da mejor o peor
+# ALGORITMO
 
-Si elige "a" guarda valor 2 en "Respuestas"
-Si elige "b" guarda valor 1 en "Respuestas"
-Si elige "c" guarda valor 0 en "Respuestas"
+**Inicio del examen** (Estado Inicial)
 
 
-Pregunta 3 = "3. Mi interés y disfrute por las relaciones sociales"
-Desplega =
-  a) Es nulo
-  b) Es moderado, dependiendo de las circunstancias
-  c) Es alto; me encanta estar con gente, hablar, etcétera
-
-Si elige "a" guarda valor 1 en "Respuestas"
-Si elige "b" guarda valor 0 en "Respuestas"
-Si elige "c" guarda valor 2 en "Respuestas"
-
-
-Pregunta 4 = "4. En general, mi grado de sociabilidad es"
-Desplega =
-  a) Bajísimo
-  b) Muy alto
-  c) Moderado
-
-Si elige "a" guarda valor 1 en "Respuestas"
-Si elige "b" guarda valor 2 en "Respuestas"
-Si elige "c" guarda valor 0 en "Respuestas"
+>Primer pregunta
+ '''
+print("1. Cuando estoy en una reunion de trabajo 
+  1) Prefiero pasar desapercibido
+  2) Intervengo solo cuando es necesario
+  3) Me gusta participar
+     ")
+'''
+>se guarda la respuesta que indica el usuario
+resp_1 = int(input())
+>se guarda la respuesta en el resultado para sumar las respuestas 
+resultado = resp_1
 
 
-Pregunta 5 = "5. Cuando debo de realizar un trabajo en equipo"
-Desplega =
-  a) Lo evito como sea
-  b) Me gusta organizarme y trabajar con la gente
-  c) Lo hago, aunque no sea mi elección preferida
-
-Si elige "a" guarda valor 1 en "Respuestas"
-Si elige "b" guarda valor 2 en "Respuestas"
-Si elige "c" guarda valor 0 en "Respuestas"
-
-
-Pregunta 6 = "6. ¿Qué tipos de hobbies prefieres?"
-Desplega =
-  a) Tranquilos (leer, ver una película…)
-  b) Son variados; desde correr hasta ver una buena película o leer
-  c) De acción (senderismo, deportes activos)
-
-Si elige "a" guarda valor 1 en "Respuestas"
-Si elige "b" guarda valor 0 en "Respuestas"
-Si elige "c" guarda valor 2 en "Respuestas"
+>Segunda Pregunta
+'''
+print("2. A la hora de entablar nuevas amistades  
+  1) No me gusta, y me cuesta muchísimo
+  2) Dependiendo de cómo sean las personas, se me da mejor o peor
+  3) Me gusta y lo hago fácilmente
+     ")
+'''
+>se guarda la respuesta que indica el usuario
+resp_2 = int(input())
+>se guarda la respuesta en el resultado para sumar las respuestas
+resultado = resp_1 + resp_2
 
 
-Pregunta 7 = "7. ¿En qué grado necesitas estar rodeado de otras personas?"
-Desplega =
-  a) Mucho; si estoy solo se me cae la casa encima
-  b) Cuando las necesito o me aburro
-  c) Poco; soy bastante solitario
-
-Si elige "a" guarda valor 2 en "Respuestas"
-Si elige "b" guarda valor 0 en "Respuestas"
-Si elige "c" guarda valor 1 en "Respuestas"
-
-
-Pregunta 8 = "8. A nivel emocional, las cosas me afectan"
-Desplega =
-  a) Poco
-  b) Considerablemente, dependiendo de los acontecimientos
-  c) Muchísimo; soy muy emocional
-
-Si elige "a" guarda valor 2 en "Respuestas"
-Si elige "b" guarda valor 0 en "Respuestas"
-Si elige "c" guarda valor 1 en "Respuestas"
+>Tercera Pregunta
+'''
+print("3. Mi interés y disfrute por las relaciones sociales 
+  1) Es nulo
+  2) Es moderado, dependiendo de las circunstancias
+  3) Es alto; me encanta estar con gente, hablar, etcétera
+     ")
+'''
+>se guarda la respuesta que indica el usuario
+resp_3 = int(input())
+>se guarda la respuesta en el resultado para sumar las respuestas
+resultado = resp_1 + resp_2 + resp_3
 
 
-Pregunta 9 = "9. En general, la gente piensa de mí que soy"
-Desplega =
-  a) Una persona que se adapta a las circunstancias y, dependiendo de quien opine, más o menos simpático
-  b) Callado y aburrido
-  c) Sociable y divertido
-
-Si elige "a" guarda valor 0 en "Respuestas"
-Si elige "b" guarda valor 1 en "Respuestas"
-Si elige "c" guarda valor 2 en "Respuestas"
-
-
-Pregunta 10 = "10. Me considero una persona"
-Desplega =
-  a) Optimista
-  b) Realista
-  c) Pesimista
-
-Si elige "a" guarda valor 2 en "Respuestas"
-Si elige "b" guarda valor 0 en "Respuestas"
-Si elige "c" guarda valor 1 en "Respuestas"
+> Cuarta Pregunta
+'''
+print ("4. En general, mi grado de sociabilidad es 
+  1) Bajísimo
+  2) Moderado
+  3) Muy alto
+     ")
+'''
+>se guarda la respuesta que indica el usuario
+resp_4 = int(input())
+>se guarda la respuesta en el resultado para sumar las respuestas
+resultado = resp_1 + resp_2 + resp_3 + resp_4
 
 
-Respuestas = ("Pregunta 1", "Pregunta 2", "Pregunta 3", "Pregunta 4", "Pregunta 5", "Pregunta 6", "Pregunta 7", "Pregunta 8", "Presunta 9", "Pregunta 10")
+>Quinta Pregunta
+'''
+print ("5. Cuando debo de realizar un trabajo en equipo
+  1) Lo evito como sea
+  2) Lo hago, aunque no sea mi elección preferida
+  3) Me gusta organizarme y trabajar con la gente
+     ")
+'''
+>se guarda la respuesta que indica el usuario
+resp_5 = int(input())
+>se guarda la respuesta en el resultado para sumar las respuestas
+resultado = int(resp_1 + resp_2 + resp_3 + resp_4 + resp_5)
 
-Contar numero de valores de 2, 1, 0 en "Respuestas"
+>Dependiendo de la suma de tu resultado final sabras tu resultado
+print ("Si tu resultado se encuentra entre 1 y 5 eres INTROVERTIDO")
+print ("Si tu resultado se encuentra entre 6 y 10 eres AMBIVERTIDO")
+print ("Si tu resultado se encuentra entre 11 y 15 eres EXTROVERTIDO")
 
-Si Respuestas = 2 > 1 > 0
-  Despliega = "ERES EXTROVERTIDO"
+>Se despliega el resultado obtenido
+**Estado Final** (print("Resultado:", resultado))
 
-Si Respuestas = 1 > 2 > 0
-  Despliega = "ERES INTROVERTIDO"
 
-Si Respuestas = 0 > 1 > 2
-  Despliega = "ERES AMBIVERTIDO"
+
+
 
 
 
