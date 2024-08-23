@@ -17,6 +17,7 @@ En este examen diseñado por la psicóloga Vanesa Fernandez Lopez (2022) recabad
 
 
 >Primer pregunta
+
  '''
 print("1. Cuando estoy en una reunion de trabajo 
   1) Prefiero pasar desapercibido
@@ -25,12 +26,16 @@ print("1. Cuando estoy en una reunion de trabajo
      ")
 '''
 >se guarda la respuesta que indica el usuario
+
 resp_1 = int(input())
->se guarda la respuesta en el resultado para sumar las respuestas 
+
+>se guarda la respuesta en el resultado para sumar las respuestas
+
 resultado = resp_1
 
 
 >Segunda Pregunta
+
 '''
 print("2. A la hora de entablar nuevas amistades  
   1) No me gusta, y me cuesta muchísimo
@@ -39,12 +44,16 @@ print("2. A la hora de entablar nuevas amistades
      ")
 '''
 >se guarda la respuesta que indica el usuario
+
 resp_2 = int(input())
+
 >se guarda la respuesta en el resultado para sumar las respuestas
+
 resultado = resp_1 + resp_2
 
 
 >Tercera Pregunta
+
 '''
 print("3. Mi interés y disfrute por las relaciones sociales 
   1) Es nulo
@@ -52,13 +61,18 @@ print("3. Mi interés y disfrute por las relaciones sociales
   3) Es alto; me encanta estar con gente, hablar, etcétera
      ")
 '''
+
 >se guarda la respuesta que indica el usuario
+
 resp_3 = int(input())
+
 >se guarda la respuesta en el resultado para sumar las respuestas
+
 resultado = resp_1 + resp_2 + resp_3
 
 
 > Cuarta Pregunta
+
 '''
 print ("4. En general, mi grado de sociabilidad es 
   1) Bajísimo
@@ -66,13 +80,18 @@ print ("4. En general, mi grado de sociabilidad es
   3) Muy alto
      ")
 '''
+
 >se guarda la respuesta que indica el usuario
+
 resp_4 = int(input())
+
 >se guarda la respuesta en el resultado para sumar las respuestas
+
 resultado = resp_1 + resp_2 + resp_3 + resp_4
 
 
 >Quinta Pregunta
+
 '''
 print ("5. Cuando debo de realizar un trabajo en equipo
   1) Lo evito como sea
@@ -81,16 +100,21 @@ print ("5. Cuando debo de realizar un trabajo en equipo
      ")
 '''
 >se guarda la respuesta que indica el usuario
+
 resp_5 = int(input())
+
 >se guarda la respuesta en el resultado para sumar las respuestas
+
 resultado = int(resp_1 + resp_2 + resp_3 + resp_4 + resp_5)
 
 >Dependiendo de la suma de tu resultado final sabras tu resultado
+
 print ("Si tu resultado se encuentra entre 1 y 5 eres INTROVERTIDO")
 print ("Si tu resultado se encuentra entre 6 y 10 eres AMBIVERTIDO")
 print ("Si tu resultado se encuentra entre 11 y 15 eres EXTROVERTIDO")
 
 >Se despliega el resultado obtenido
+
 **Estado Final** (print("Resultado:", resultado))
 
 
