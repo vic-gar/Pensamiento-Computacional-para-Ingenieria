@@ -2,36 +2,12 @@
 El proyecto se basa en un gestor de inventario para tiendas, actualmente el \
 proyecto solo cuenta con 5 productos máximo, se pedirán el nombre del \
 producto al usuario, la cantidad de ese mismo producto y el costo \
-por unidad del producto. Con estos datos se otorgarán datos como el costo del \
-inventario y el total de productos.
+por unidad del producto. Con estos datos se otorgarán datos para facilitar \
+ciertos operativos dentro de la tienda.
 '''
 '''
 Inicio del programa
 '''
-'''
-Se define una función para calcular el costo del inventario, multiplicando la \
-cantidad de productos de un tipo por el costo por unidad del mismo producto, y \
-posteriormente sumando los resultados de cada uno de los productos dados.
-'''
-
-def costo_inventario(prod_1, cos_1, prod_2, cos_2, prod_3, cos_3, prod_4, \
-cos_4, prod_5, cos_5):
-     val_1 = prod_1 * cos_1
-     val_2 = prod_2 * cos_2
-     val_3 = prod_3 * cos_3
-     val_4 = prod_4 * cos_4
-     val_5 = prod_5 * cos_5
-     costo = val_1 + val_2 + val_3 + val_4 + val_5
-     return costo
-
-'''
-Se define una segunda función para calcular el total de productos sumando la \
-cantidad dada de cada uno de los productos.
-'''
-
-def total_productos(prod_1, prod_2, prod_3, prod_4, prod_5):
-    productos = prod_1 + prod_2 + prod_3 + prod_4 + prod_5
-    return productos
 
 '''
 Esta función indica el precio a mayoreo dependiendo de la cantidad del \
@@ -52,59 +28,63 @@ def calcular_descuento_mayoreo(cantidad_producto,costo_producto):
     return costo_descuento
 
 
+
 '''
 En esta etapa se le indica al usuario que coloque la totalidad de productos \
 con su nombre, total de productos que hay actualmente y su precio por unidad. \
-Ahora solo utilizaremos 5 productos en total.
+Utilizamos un ciclo while para que el numero de veces que pide al usuario \
+un producto sea infinito o hasta que el usuario indique 'done'. El programa \
+indica el numero del producto con un acumulador que despues de cada iteración \
+de un nuevo producto sume 1, así indicando que el siguiente sea 2 y así\
+sucesivamente. Los valores de la acumuación, del nombre, de la cantidad \
+y del costo por unidad se guardan para poder utilizarlos para modificar estos \
+valores después.
 '''
 
-print("Coloca el nombre del producto 1, su cantidad y su precio por unidad")
-nom_producto_1 = str(input())
-cantidad_producto_1 = int(input())
-costo_producto_1 = int(input())
+acum = 1
+while True:
 
-print("Coloca el nombre del producto 2, su cantidad y su precio por unidad")
-nom_producto_2 = str(input())
-cantidad_producto_2 = int(input())
-costo_producto_2 = int(input())
+    nombre_producto = input(f"Ingrese el nombre del producto {acum} (Escriba done para terminar):")
 
-print("Coloca el nombre del producto 3, su cantidad y su precio por unidad")
-nom_producto_3 = str(input())
-cantidad_producto_3 = int(input())
-costo_producto_3 = int(input())
+    if nombre_producto == "done":
+        break
 
-print("Coloca el nombre del producto 4, su cantidad y su precio por unidad")
-nom_producto_4 = str(input())
-cantidad_producto_4 = int(input())
-costo_producto_4 = int(input())
+    cantidad_producto = int(input(f"Ingrese la cantidad de unidades de {nombre_producto}:"))
+    precio_producto = float(input(f"Ingrese el costo por unidad de {nombre_producto}:"))
 
-print("Coloca el nombre del producto 5, su cantidad y su precio por unidad")
-nom_producto_5 = str(input())
-cantidad_producto_5 = int(input())
-costo_producto_5 = int(input())
+    globals()[f"nombre_producto_{acum}"] = nombre_producto
+    globals()[f"cantidad_producto_{acum}"] = cantidad_producto
+    globals()[f"precio_producto_{acum}"] = precio_producto
+
+    print(f"Producto {acum}: {nombre_producto}, {cantidad_producto} unidades, ${precio_producto} cada producto.")
+
+    acum = acum + 1
+
+'''
+Aquí se hace llamar el inventario total con los valores que el usuario indicó \
+anteriormente.
+'''
+
+print("\n----INVENTARIO----")
+for i in range (1, acum):
+    nombre = globals()[f"nombre_producto_{i}"]
+    cantidad = globals()[f"cantidad_producto_{i}"]
+    precio = globals()[f"precio_producto_{i}"]
+    print(f"Producto{i}: {nombre}, Cantidad: {cantidad}, Precio{precio}")
 
 
 '''
 Para finalizar, se mandan los datos dados por el usuario a las fuciones \
-del inicio para calcular el total de productos, el costo del inventario \
-actual y el descuento por mayoreo. Luego se imprime el resultado al usuario.
+del inicio para calcular el descuento por mayoreo. Luego se imprime el \
+resultado al usuario.
 '''
 
-inventario_total_costo = costo_inventario(cantidad_producto_1, costo_producto_1, \
-cantidad_producto_2, costo_producto_2, cantidad_producto_3, costo_producto_3, \
-cantidad_producto_4, costo_producto_4, cantidad_producto_5, costo_producto_5)
+print("\n Indica la cantidad de producto para el descuento por mayoreo y el \
+costo por unidad de ese producto")
 
-print("El costo total del inventario es:", inventario_total_costo)
-
-productos = total_productos(cantidad_producto_1, cantidad_producto_2, \
-cantidad_producto_3, cantidad_producto_4, cantidad_producto_5)
-
-print("El total de productos en el inventrio es:", productos)
-
-print("Indica la cantidad de producto para el descuento por mayoreo y el costo \
-por unidad de ese producto")
 cantidad_producto_may = int(input())
 costo_producto_may = float(input())
+
 costo_mayoreo = calcular_descuento_mayoreo(cantidad_producto_may, \
 costo_producto_may)
 
