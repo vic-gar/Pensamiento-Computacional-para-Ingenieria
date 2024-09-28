@@ -28,7 +28,6 @@ def calcular_descuento_mayoreo(cantidad_producto,costo_producto):
     return costo_descuento
 
 
-
 '''
 En esta etapa se le indica al usuario que coloque la totalidad de productos \
 con su nombre, total de productos que hay actualmente y su precio por unidad. \
@@ -36,41 +35,40 @@ Utilizamos un ciclo while para que el numero de veces que pide al usuario \
 un producto sea infinito o hasta que el usuario indique 'done'. El programa \
 indica el numero del producto con un acumulador que despues de cada iteración \
 de un nuevo producto sume 1, así indicando que el siguiente sea 2 y así\
-sucesivamente. Los valores de la acumuación, del nombre, de la cantidad \
-y del costo por unidad se guardan para poder utilizarlos para modificar estos \
-valores después.
+sucesivamente. Los resultados se guardan en listas, una con los nombres, \
+otra con la contidad y la ultima con el costo por unidad.
 '''
 
-acum = 1
-while True:
+def ingresar_productos():
+    nombres_productos = []
+    cantidades_productos = []
+    costos_unidad = []
+    i = 1
+    while True:
+        nombre = input(f"Ingrese el nombre del produto {i} (o escriba 'done' \
+        para finalizar):")
+        if nombre == "done":
+            break
+        cantidad = int(input(f"Ingrese la cantidad del producto {i}:"))
+        costo = float(input(f"Ingrese el costo por unidad del producto {i}:"))
 
-    nombre_producto = input(f"Ingrese el nombre del producto {acum} (Escriba done para terminar):")
+        nombres_productos.append(nombre)
+        cantidades_productos.append(cantidad)
+        costos_unidad.append(costo)
+        i += 1
+    return nombres_productos, cantidades_productos, costos_unidad
 
-    if nombre_producto == "done":
-        break
-
-    cantidad_producto = int(input(f"Ingrese la cantidad de unidades de {nombre_producto}:"))
-    precio_producto = float(input(f"Ingrese el costo por unidad de {nombre_producto}:"))
-
-    globals()[f"nombre_producto_{acum}"] = nombre_producto
-    globals()[f"cantidad_producto_{acum}"] = cantidad_producto
-    globals()[f"precio_producto_{acum}"] = precio_producto
-
-    print(f"Producto {acum}: {nombre_producto}, {cantidad_producto} unidades, ${precio_producto} cada producto.")
-
-    acum = acum + 1
 
 '''
 Aquí se hace llamar el inventario total con los valores que el usuario indicó \
-anteriormente.
+anteriormente. Estos se acomodan en base a la posición de cada lista \
+respectivamente.
 '''
 
-print("\n----INVENTARIO----")
-for i in range (1, acum):
-    nombre = globals()[f"nombre_producto_{i}"]
-    cantidad = globals()[f"cantidad_producto_{i}"]
-    precio = globals()[f"precio_producto_{i}"]
-    print(f"Producto{i}: {nombre}, Cantidad: {cantidad}, Precio{precio}")
+inventario = ingresar_productos()
+print("\n-----RESUMEN INVENTARIO-----")
+for i in inventario:
+    print(i)
 
 
 '''
