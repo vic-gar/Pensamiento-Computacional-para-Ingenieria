@@ -12,8 +12,28 @@ El objetivo de este proyecto será el desarrollar un gestor de inventario para f
 
 Descargar el archivo y correr en terminal.
 
-proyecto.py
+  proyecto.py
 
+## CORRECCIONES 
+
+Sub-Competencia: 
+	componente: usa operadores aritméticos de manera eficaz
+
+Error original: No subí el link del repositorio de Github a la asignación.
+
+Cambio realizado: Se colocaron los operadores aritméticos para el avance faltante.
+
+	total = 0
+    for producto in inventario:
+        total += producto[1] * producto[2]
+    return total
+
+Líneas de código donde se ve la corrección: 56 a 59
+
+## Referencias al API
+
+Python. (2024). 7.1.1. Formatear cadenas literales. Recabado de:
+    https://docs.python.org/es/3/tutorial/inputoutput.html
 
 
 
