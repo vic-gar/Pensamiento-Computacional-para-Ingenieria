@@ -12,7 +12,7 @@ El objetivo de este proyecto será el desarrollar un gestor de inventario para f
 
 Descargar el archivo y correr en terminal.
 
-  proyecto.py
+  > proyecto.py
 
 ## CORRECCIONES 
 
